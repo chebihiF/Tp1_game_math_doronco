@@ -8,22 +8,31 @@
     android:layout_marginHorizontal="50dp"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:text="Math Challenge"/>
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/nbr1_1"
+            android:id="@+id/nbr1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="0"
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/opr_1"
+            android:id="@+id/opr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -31,7 +40,7 @@
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/nbr2_2"
+            android:id="@+id/nbr2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -39,5 +48,64 @@
             android:textSize="30sp" />
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/l1"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/res1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/btn_color"
+            android:text="0"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/res2"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:backgroundTint="@color/btn_color"
+            android:text="0"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/res3"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:backgroundTint="@color/btn_color"
+            android:text="0"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/score_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score :"
+        android:layout_toStartOf="@id/score"
+        android:layout_alignTop="@id/score"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/score"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:text="0" />
+
+
 
 </RelativeLayout>
