@@ -2,7 +2,9 @@ package org.doronco.tp1_game_math;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,8 +21,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("testtest","start onStop method");
     }
 
     @Override
@@ -53,10 +59,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             res1.setText((val1+val2)+"");
             res2.setText(String.valueOf(1 + random.nextInt(200)));
             res3.setText(String.valueOf(1 + random.nextInt(200)));
-        }if(r==1){
-        res2.setText((val1+val2)+"");
-        res1.setText(String.valueOf(1 + random.nextInt(200)));
-        res3.setText(String.valueOf(1 + random.nextInt(200)));
+        }else if(r==1){
+            res2.setText((val1+val2)+"");
+            res1.setText(String.valueOf(1 + random.nextInt(200)));
+            res3.setText(String.valueOf(1 + random.nextInt(200)));
         }else
         {
             res3.setText((val1+val2)+"");
@@ -68,10 +74,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Button button = (Button) v ;
+        int score_value = Integer.parseInt(score.getText().toString());
         if(Integer.parseInt(button.getText().toString()) == val1+val2)
-            score.setText(String.valueOf(Integer.parseInt(score.getText().toString())+1));
+            score.setText(String.valueOf(score_value = score_value +1));
         else
-            score.setText(String.valueOf(Integer.parseInt(score.getText().toString())-1));
+            score.setText(String.valueOf(score_value = score_value -1));
+        if(score_value > 0)
+            score.setTextColor(Color.rgb(0,255,0));
+        else if(score_value < 0)
+            score.setTextColor(Color.rgb(255,0,0));
         initGame();
     }
 }
