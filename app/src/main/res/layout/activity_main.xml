@@ -14,7 +14,7 @@
         android:gravity="center"
         android:textSize="35sp"
         android:textColor="@color/black"
-        android:text="Math Challenge"/>
+        android:text="@string/title"/>
 
     <LinearLayout
         android:id="@+id/l1"
@@ -91,10 +91,10 @@
         android:id="@+id/score_lbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score :"
-        android:layout_toStartOf="@id/score"
         android:layout_alignTop="@id/score"
-        android:textSize="20sp"/>
+        android:layout_toStartOf="@id/score"
+        android:text="Score :"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
